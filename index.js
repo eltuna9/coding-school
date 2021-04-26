@@ -1,7 +1,21 @@
 console.log("first hello world application running correctly bItcHssssss");
+
 function myfunctionsubmit() {
+  var myul = document.getElementById("myul");
   var li = document.createElement("li");
+  var inputValue = document.getElementById("mytext");
+  li.innerText = inputValue.value;
+  myul.appendChild(li);
+  inputValue.value = "";
 }
-var inputValue = document.getElementById("mytext").value;
-var t = document.createTextNode(inputValue);
-li.appendChild(t);
+
+function loadhandler() {
+  setSubmitButtonEventHandler();
+}
+
+function setSubmitButtonEventHandler() {
+  var submitButton = document.getElementById("submit");
+  submitButton.onclick = myfunctionsubmit;
+}
+
+window.addEventListener("load", loadhandler);

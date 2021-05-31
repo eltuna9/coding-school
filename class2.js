@@ -193,10 +193,11 @@ aVeryLargeString;
 // write a function reverseText(text), that accepts a text as a parameter, and returns the same text but backwards
 
 function reverseText(text) {
+  var newText = "";
   for (let i = text.length; i > -1; i--) {
-    let newText = text[i];
-    console.log(newText);
+    newText += text[i];
   }
+  console.log(newText);
 }
 
 reverseText("IT WORKS");
@@ -211,10 +212,12 @@ reverseText("IT WORKS");
 
 capitalizeText("blahblah"); */
 
-var sentence = "this is my sentence";
+function capitalizeText(text) {
+  var capitalizeString = (str) =>
+    str[0].toUpperCase() + str.slice(1).toLowerCase();
+  var capitalizeWords = (str) => str.split(" ").map(capitalizeString).join(" ");
 
-var capitalizeString = (str) =>
-  str[0].toUpperCase() + str.slice(1).toLowerCase();
-var capitalizeWords = (str) => str.split(" ").map(capitalizeString).join(" ");
+  console.log(capitalizeWords(text));
+}
 
-console.log(capitalizeWords(sentence));
+capitalizeText("test test");

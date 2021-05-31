@@ -8,7 +8,7 @@ const thisNeverChanges = 5;
 // if you uncomment the line bellow the script is gonna crash, const cannnot be redifined
 // thisNeverChanges = 6;
 
-let anotherVariable = 'asdas';
+let anotherVariable = "asdas";
 
 // Secondly, we saw how let can only be used inside the block scope curly braces, see how the console log in line 23 is going to fail but if you change it to var, it works
 // the take away here, try to use let as it kinda encourages you to write cleaner code
@@ -16,9 +16,9 @@ let anotherVariable = 'asdas';
 // let -> block scope
 // const -> block scope
 {
-  console.log('we got into the if statement');
-  let goodMessage = 'You fucked up!';
-  let badMessage = 'You good';
+  console.log("we got into the if statement");
+  let goodMessage = "You fucked up!";
+  let badMessage = "You good";
 }
 // console.log(goodMessage);
 
@@ -30,27 +30,27 @@ let anotherVariable = 'asdas';
 const nicol = {
   height: 1.82,
   weight: 90,
-  gender: 'male',
-  nativeLanguage: 'English',
-  name: 'Nicol Mouton',
+  gender: "male",
+  nativeLanguage: "English",
+  name: "Nicol Mouton",
   head: {
-    hairColor: 'brown',
-    noseLength: '3cm',
+    hairColor: "brown",
+    noseLength: "3cm",
   },
   sing: function () {
-    alert('nicol is fricking singing!! 😯');
+    alert("nicol is fricking singing!! 😯");
   },
 };
 
-console.log('nicol gender is:' + nicol.gender);
-console.log('nicol native language is:' + nicol.nativeLanguage);
+console.log("nicol gender is:" + nicol.gender);
+console.log("nicol native language is:" + nicol.nativeLanguage);
 // as objects can also contain functions, we could call a function that lives inside an object
 nicol.sing();
 
 // Fourthly, arrays!!
 //Arrays are declared using squate brackets, and usually represent a collection of things
 
-const countries = ['Australia', 'Argentina', 'South Africa'];
+const countries = ["Australia", "Argentina", "South Africa"];
 
 // You access an array, referencing the vairable name and swuare brackets with the index of the element you want to use.
 // Arrays have zero-based indexes, meaning that the first element is the index 0
@@ -64,23 +64,23 @@ console.log(countries[9]); //undefined
 
 const arrayOfCars = [
   {
-    brand: 'Ford',
-    model: 'Mustang',
+    brand: "Ford",
+    model: "Mustang",
   },
   {
-    brand: 'Mitsibishi',
-    model: 'Lancer',
+    brand: "Mitsibishi",
+    model: "Lancer",
     engine: {
       valves: 7,
       pistons: {
-        whatever: 'something',
-        elementsOfPistons: ['elemtn1', 'elemtn1'],
+        whatever: "something",
+        elementsOfPistons: ["elemtn1", "elemtn1"],
       },
     },
   },
   {
-    brand: 'Ferrari',
-    model: 'Expensive',
+    brand: "Ferrari",
+    model: "Expensive",
   },
 ];
 
@@ -95,7 +95,7 @@ function thisIsTheFunctionName() {}
 
 // A function can accept parameters to be used inside the scope of the function, the are just as normal variables declared inside the function
 function sayHiIfIGiveYouABigNumber(number) {
-  if (number > 100) console.log('Hi bitches');
+  if (number > 100) console.log("Hi bitches");
 }
 
 //To run a function, you write the function name with the parenthesis and the parameter values, if you dont write the parameter value, javascript is gonna take it as undefined
@@ -106,8 +106,8 @@ sayHiIfIGiveYouABigNumber(); // nothing
 //otherwise you surely are doing something wrong and need to rethink the way you are solving it
 
 function decideIfGoToSchoolOrNot(isRaining, isSaturday, iGiveAFuck) {
-  if (!isRaining && !isSaturday && iGiveAFuck) console.log('Going to school');
-  else console.log('Not going to school');
+  if (!isRaining && !isSaturday && iGiveAFuck) console.log("Going to school");
+  else console.log("Not going to school");
 }
 
 decideIfGoToSchoolOrNot(true, true, false); // Not going to school
@@ -115,7 +115,7 @@ decideIfGoToSchoolOrNot(false, false, true); // Going to school
 
 // Functions can be void, meaning that they do not return anything, but they can also return shit.
 function voidFunction() {
-  console.log('I njust execute this, thats all');
+  console.log("I njust execute this, thats all");
 }
 
 // you return something using the magic return word :)
@@ -125,11 +125,11 @@ function gimmeTheDate() {
 
 // then you can save that in a variable for example
 const today = gimmeTheDate();
-console.log('Today date is: ' + today);
+console.log("Today date is: " + today);
 
 //you can alsow declare functions with a different syntax
 const myArrowFunction = () => {
-  console.log('this is an arrow function');
+  console.log("this is an arrow function");
 };
 
 // Exercise time!!!
@@ -161,34 +161,60 @@ for (let index = 0; index < arrayOfNumbers.length; index++) {
   // lets deconstruct this line above
   // we declare the variable index and initialize it with the value 0; while the value of index is less than the lenght of arrayOfNumbers (4); increment index by one (index++)
   // index++ is just a shortcut for index = index +1;
-  console.log('The current index value is: ', index);
-  console.log('The value for the array is: ', arrayOfNumbers[index]);
+  console.log("The current index value is: ", index);
+  console.log("The value for the array is: ", arrayOfNumbers[index]);
 }
 
 //you could also use a foreach loop,
 // a foreach loop is a property of the array object, thats why we call it using arrayOfNumbers.forEach, remember when we declared nicol.sing
-console.log('running for each');
+console.log("running for each");
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 arrayOfNumbers.forEach((element) => {
   //remember this is just a different way of declaring a function: () => {code here}; see line 131
-  console.log('The element is', element);
+  console.log("The element is", element);
 });
 
 //Example on iterating over a strings
 
-const aVeryLargeString = 'This iss a fricking very large string I dont know why but that is true';
+const aVeryLargeString =
+  "This iss a fricking very large string I dont know why but that is true";
 
 // lets iterate over this strings
 for (let index = 0; index < aVeryLargeString.length; index++) {
   const letter = aVeryLargeString[index];
-  console.log('The letter with index', index, 'is', letter);
+  console.log("The letter with index", index, "is", letter);
 }
+
+aVeryLargeString;
 
 //Exercise for home! feel free to google a little bit to complete it
 
 //Exercise 1
 // write a function reverseText(text), that accepts a text as a parameter, and returns the same text but backwards
 
+function reverseText(text) {
+  for (let i = text.length; i > -1; i--) {
+    let newText = text[i];
+    console.log(newText);
+  }
+}
+
+reverseText("IT WORKS");
+
 //Exercise 2
 //Write a capitalizeText(text) function that Converts Every First Letter Of A Paragraph To Capital.
 // to do uppercase you go letter.toUpperCase() or something like that google it
+
+/* function capitalizeText(texttwo) {
+  console.log(texttwo[0].toUpperCase());
+}
+
+capitalizeText("blahblah"); */
+
+var sentence = "this is my sentence";
+
+var capitalizeString = (str) =>
+  str[0].toUpperCase() + str.slice(1).toLowerCase();
+var capitalizeWords = (str) => str.split(" ").map(capitalizeString).join(" ");
+
+console.log(capitalizeWords(sentence));

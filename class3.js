@@ -29,7 +29,7 @@ function reverseOrder(array) {
   let newArray = [];
   for (let index = array.length - 1; index > 0; index--) {
     const element = array[index];
-    newArray = newArray += element;
+    newArray.push(element);
   }
   return newArray;
 }
@@ -68,12 +68,15 @@ console.log(
 let str1 = "javascript";
 
 function addZToString(myString) {
-  var myNewString = "";
+  let myNewString = [];
+  myString.split();
   for (let index = 0; index < myString.length; index++) {
     const element = myString[index];
-    myNEwString = myString += element;
+    if (index % 2 == 0) {
+      myNewString.push(element);
+    } else myNewString.push("Z");
   }
-  return myNewString;
+  return myNewString.join("");
 }
 //HINT: You can use  if((i+1) % 2 == 0) to check for even indexes
 
@@ -91,15 +94,21 @@ console.log(
 let n2 = 6; // 6 * 5 * 4 * 3 * 2 * 1 = 720
 
 function getFactorial(number) {
+  let newArr = [];
   for (let index = number; index > 0; index--) {
-    const element = number[index];
-    console.log(element);
+    newArr.push(index);
   }
+  let total = 1;
+  for (let index = 0; index < newArr.length; index++) {
+    const element = newArr[index];
+    total = element * total;
+  }
+  return total;
 }
 
 console.log(
   "Exercise 5 result (getFactorial) is:",
-  getFactorial(6),
+  getFactorial(n2),
   "it should be",
   720
 );
@@ -108,7 +117,16 @@ console.log(
 //Return an array containing all odd numbers up to and including limitNumber. Don’t include 0.
 let limitNumber = 22;
 
-function getOddNumbers(limit) {}
+function getOddNumbers(limit) {
+  let newArr = [];
+  for (let index = 1; index <= limit; index++) {
+    const element = index;
+    if (element % 2 != 0) {
+      newArr.push(element);
+    }
+  }
+  return newArr;
+}
 
 console.log(
   "Exercise 6 result (getOddNumbers) is:",

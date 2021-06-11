@@ -14,3 +14,15 @@ A place to use when teaching someone how to start with software development
 # Participants
 
 - Nicol
+
+## class 2:
+
+- Different types of variables and their uses- Var, Let, Const
+- null and undefined
+- Papameters
+- objects, how they store different information including functions.
+- Arrays, how to store objects in arrays
+- Functions, arrow functions
+- if/ else conditions
+- Return
+- FOR LOOPS- initialisation,condition, increments. Iterating over an array.

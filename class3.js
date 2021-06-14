@@ -68,15 +68,14 @@ console.log(
 let str1 = "javascript";
 
 function addZToString(myString) {
-  let myNewString = [];
-  myString.split();
+  let myNewString = "";
   for (let index = 0; index < myString.length; index++) {
     const element = myString[index];
     if (index % 2 == 0) {
-      myNewString.push(element);
-    } else myNewString.push("Z");
+      myNewString += element;
+    } else myNewString += "Z";
   }
-  return myNewString.join("");
+  return myNewString;
 }
 //HINT: You can use  if((i+1) % 2 == 0) to check for even indexes
 
@@ -94,14 +93,9 @@ console.log(
 let n2 = 6; // 6 * 5 * 4 * 3 * 2 * 1 = 720
 
 function getFactorial(number) {
-  let newArr = [];
-  for (let index = number; index > 0; index--) {
-    newArr.push(index);
-  }
   let total = 1;
-  for (let index = 0; index < newArr.length; index++) {
-    const element = newArr[index];
-    total = element * total;
+  for (let index = number; index > 1; index--) {
+    total *= index;
   }
   return total;
 }

@@ -23,10 +23,19 @@ console.log(
 );
 
 // Exercise 2)
-// Using a for loop output the elements in reverse order
+// Using a while loop output the elements in reverse order
 let arr = [43, "what", 9, true, "cannot", false, "be", 3.5, true];
 
-function reverseOrder(array) {}
+function reverseOrder(array) {
+  let newArray = [];
+  let index = array.length - 1;
+  while (index > -1) {
+    const element = array[index];
+    newArray.push(element);
+    index--;
+  }
+  return newArray;
+}
 
 console.log(
   "Exercise 2 result (reverseOrder) is:",
@@ -62,7 +71,19 @@ console.log(
 // there are no spaces.
 let str1 = "javascript";
 
-function addZToString(myString) {}
+function addZToString(myString) {
+  let newStr = "";
+  let index = 0;
+  while (index < myString.length) {
+    let element = myString[index];
+    if (index % 2 == 0) {
+      newStr += element;
+    } else newStr += "Z";
+
+    index++;
+  }
+  return newStr;
+}
 //HINT: You can use  if((i+1) % 2 == 0) to check for even indexes
 
 console.log(
@@ -97,7 +118,17 @@ console.log(
 //Return an array containing all odd numbers up to and including limitNumber. Don’t include 0.
 let limitNumber = 22;
 
-function getOddNumbers(limit) {}
+function getOddNumbers(limit) {
+  let newArray = [];
+  let index = 0;
+  while (index < limit - 1) {
+    if (index % 2 != 0) {
+      newArray.push(index);
+    }
+    index++;
+  }
+  return newArray;
+}
 
 console.log(
   "Exercise 6 result (getOddNumbers) is:",

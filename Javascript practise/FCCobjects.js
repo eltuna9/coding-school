@@ -1,3 +1,11 @@
+var myArray = [];
+
+// Only change code below this line
+for (i = 1; i < 10; i += 2) {
+  myArray.push(i);
+}
+console.log(myArray);
+
 /* You are given an object literal representing a part of your musical album collection.
 Each album has a unique id number as its key and several other properties.
 Not all albums have complete information.
@@ -33,20 +41,25 @@ var recordCollection = {
 function updateRecords(records, id, prop, value) {
   if (prop !== "tracks" && value !== "") {
     records[id][prop] = value;
-  }
-  if (prop == "tracks" && records[id].hasOwnProperty("tracks") == false) {
+  } else if (
+    prop == "tracks" &&
+    records[id].hasOwnProperty("tracks") == false
+  ) {
     records[id][prop] = [value];
-  }
-  //if (prop == "tracks" && value !== "") {
-  //records[id][prop].push(value);
-  //}
-  if (value == "") {
+  } else if (prop == "tracks" && value !== "") {
+    records[id][prop].push(value);
+  } else if (value == "") {
     delete records[id][prop];
   }
+  return records; // fucked around with this for ages, ended up looking up the solution. This was the only line I was missing. not sure why we need to return records here?
 }
 
 updateRecords(recordCollection, 5439, "artist", "ABBA");
 updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me");
+updateRecords(recordCollection, 2548, "artist", "");
+updateRecords(recordCollection, 2468, "tracks", "Free");
+updateRecords(recordCollection, 2548, "tracks", "");
+updateRecords(recordCollection, 1245, "albumTitle", "Riptide");
 
 console.log(recordCollection);
 

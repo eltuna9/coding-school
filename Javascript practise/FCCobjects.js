@@ -1,10 +1,90 @@
-var myArray = [];
+/* We have an array of objects representing different people in our contacts lists.
 
-// Only change code below this line
-for (i = 1; i < 10; i += 2) {
-  myArray.push(i);
+A lookUpProfile function that takes name and a property (prop) as arguments has been pre-written for you.
+
+The function should check if name is an actual contact's firstName and the given property (prop) is a property of that contact.
+
+If both are true, then return the "value" of that property.
+
+If name does not correspond to any contacts then return the string No such contact.
+
+If prop does not correspond to any valid properties of a contact found to match name then return the string No such property. */
+
+// Setup
+var contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  // Only change code below this line
+  for (var index = 0; index < contacts.length; index++) {
+    if (contacts[index]["firstName"] == name) {
+      return contacts[index][prop];
+    }
+    if (contacts[index]["firstName"].hasOwnProperty(name) == false) {
+      return "No such contact.";
+    }
+  }
+
+  /* for (var index = 0; index < contacts.length; index++) {
+    if (
+      contacts[index].firstName == name &&
+      contacts[index].hasOwnProperty(prop)
+    ) {
+      return contacts[index].prop;
+    }
+    if (contacts[index]["firstName"].hasOwnProperty(name) == false) {
+      return "No such contact.";
+    }
+    if (ontacts[index].hasOwnProperty(prop) == false) {
+      return "No such property.";
+    }
+  } */
+  // Only change code above this line
 }
-console.log(myArray);
+
+console.log(lookUpProfile("Kristian", "lastName"));
+console.log(lookUpProfile("Sherlock", "likes"));
+console.log(lookUpProfile("Harry", "likes"));
+
+//Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr.
+
+let arrayEx1 = [3, 5, 10, 11, 55, 0, 5];
+
+function sum(arr, n) {
+  // Only change code below this line
+  if (n == 0) {
+    return 0;
+  } else {
+    return arr[n - 1] + sum(arr, n - 1);
+  }
+  // Only change code above this line
+}
+
+console.log(sum(arrayEx1, 3));
 
 /* You are given an object literal representing a part of your musical album collection.
 Each album has a unique id number as its key and several other properties.
@@ -70,4 +150,4 @@ If prop is tracks and value isn't an empty string, add value to the end of the a
 If value is an empty string, delete the given prop property from the album.
 const object = {name: 'antonio'}
 delete object.name(?)
-Note: A copy of the recordCollection object is used for the tests.  */
+Note: A copy of the recordCollection object is used for the tests.*/

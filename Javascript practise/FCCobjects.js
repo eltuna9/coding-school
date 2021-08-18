@@ -40,29 +40,28 @@ var contacts = [
 
 function lookUpProfile(name, prop) {
   // Only change code below this line
-  for (var index = 0; index < contacts.length; index++) {
+  /* for (var index = 0; index < contacts.length; index++) {
     if (contacts[index]["firstName"] == name) {
-      return contacts[index][prop];
-    }
-    if (contacts[index]["firstName"].hasOwnProperty(name) == false) {
-      return "No such contact.";
+      if (contacts[index].hasOwnProperty(prop)) {
+        return contact[index][prop];
+      }
     }
   }
-
-  /* for (var index = 0; index < contacts.length; index++) {
-    if (
-      contacts[index].firstName == name &&
-      contacts[index].hasOwnProperty(prop)
-    ) {
-      return contacts[index].prop;
-    }
-    if (contacts[index]["firstName"].hasOwnProperty(name) == false) {
-      return "No such contact.";
-    }
-    if (ontacts[index].hasOwnProperty(prop) == false) {
-      return "No such property.";
-    }
+  if (contacts[index]["firstName"].hasOwnProperty(name) == false) {
+    return "No such contact.";
   } */
+
+  for (var index = 0; index < contacts.length; index++) {
+    if (contacts[index].firstName == name) {
+      if (contacts[index][prop]) {
+        return contacts[index][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact.";
+
   // Only change code above this line
 }
 
